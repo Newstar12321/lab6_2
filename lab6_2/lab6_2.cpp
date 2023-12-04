@@ -21,9 +21,7 @@ int main()
 		return 1;
 	}
 
-	int** array;
-	array = new int* [m];
-
+	int** array = new int* [m];
 	for (size_t i = 0; i < m; i++)
 	{
 		array[i] = new int[m];
@@ -38,12 +36,14 @@ int main()
 		}
 	}
 
-	for (size_t i = 0, k = m - 1; i < m; i++, k--)
+	size_t k = m - 1;
+	for (size_t i = 0; i < m; i++)
 	{
 		for (size_t j = 0; j < k; j++)
 		{
 			array[i][j] = 0;
 		}
+		k--;
 	}
 
 	cout << "Полученная матрица: " << endl;
